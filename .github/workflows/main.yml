@@ -24,17 +24,23 @@ jobs:
             cd /home/u723134020/domains/ahmakbar.com
             git clone https://github.com/ahmakbardev/election-system.git
             cd /home/u723134020/domains/ahmakbar.com/election-system
-            chmod +x ~/bin/composer
-            echo "export PATH=$HOME/bin:$PATH" >> ~/.bash_profile
-            source ~/.bash_profile
-            which composer
-            composer --version
-            cd /home/u723134020/domains/ahmakbar.com/election-system
             git add .
             git stash
-            git pull origin develop
+            git pull
+            chmod +x ~/bin/composer
+            echo "export PATH=$HOME/bin:$PATH" >> ~/.bash_profile
+            echo "export PATH=$HOME/bin/node/bin:$PATH" >> ~/.bash_profile
+            source ~/.bash_profile
+            which node
+            node -v
+            npm -v
+            npm i
+            npm run prod
+            which composer
+            composer --version
             composer install
             composer update
+            php artisan key:generate
             php artisan route:clear
             php artisan config:cache
             php artisan optimize
