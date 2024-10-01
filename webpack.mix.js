@@ -12,6 +12,5 @@ mix.webpackConfig({})
         ],
     })
     .js("resources/js/app.js", "public/js")
-    .js("resources/js/theme.js", "public/js/theme.js")
     .sourceMaps()
     .postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);
