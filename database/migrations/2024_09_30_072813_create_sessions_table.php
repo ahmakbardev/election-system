@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('sessions', function (Blueprint $table) {
             $table->id();
             $table->string('name'); // Nama sesi pemilihan
+            $table->integer('code'); // Nama sesi pemilihan
             $table->boolean('is_open')->default(true); // Status sesi pemilihan, terbuka atau tidak
             $table->timestamps();
         });
