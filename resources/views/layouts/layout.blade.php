@@ -6,16 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SMK PGRI 2 Malang</title>
-    @if (app()->environment('local'))
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    @else
-        <!-- Append version number to CSS file name -->
-        <link rel="stylesheet" href="{{ asset('css/app.css?v=1.05') }}">
-        <!-- Add cache-control headers for CSS and JavaScript files -->
-        <link rel="preload" href="{{ asset('css/app.css?v=1.05') }}" as="style" crossorigin="anonymous"/>
-    @endif
+    <!-- Append version number to CSS file name -->
+    <link rel="stylesheet" href="{{ asset('css/app.css?v=1.05') }}">
+    <!-- Add cache-control headers for CSS and JavaScript files -->
+    <link rel="preload" href="{{ asset('css/app.css?v=1.05') }}" as="style" crossorigin="anonymous"/>
 
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/logopgri1.png') }}">
