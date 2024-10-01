@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SMK PGRI 2 Malang</title>
-    <!-- Append version number to CSS file name -->
-    <link rel="stylesheet" href="{{ asset('css/app.css?v=1.05') }}">
-    <!-- Add cache-control headers for CSS and JavaScript files -->
-    <link rel="preload" href="{{ asset('css/app.css?v=1.05') }}" as="style" crossorigin="anonymous"/>
+    @if (app()->environment('local'))
+        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <script src="{{ asset('js/app.js') }}" defer></script>
+    @else
+        <!-- Menggunakan manifest untuk memuat file CSS dan JS yang benar -->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <script src="{{ asset('js/app.js') }}" defer></script>
+    @endif
 
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/images/logos/logopgri1.png') }}">
@@ -17,7 +22,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
     <!-- Core Css -->
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.jqueryui.css"
         integrity="sha512-YydtVInqiFLmalqu/0L19ygXUp4dOTQaw/qjP/h5G8kIbTd9m60aEtZCH+D4oLor1I3C1ZOULeJeBrif+8KEaw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
