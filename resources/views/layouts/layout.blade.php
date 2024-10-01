@@ -9,7 +9,9 @@
     @if (app()->environment('local'))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
-        <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
+        <!-- Menggunakan manifest untuk memuat file CSS dan JS yang benar -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <script src="{{ mix('js/app.js') }}" defer></script>
     @endif
 
     <!-- Favicon icon-->
