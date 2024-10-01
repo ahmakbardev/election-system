@@ -66,4 +66,4 @@ jobs:
             php artisan optimize
 
             # Link public directory to public_html
-            ln -sfn /home/u723134020/domains/ahmakbar.com/election-system/public /home/u723134020/domains/ahmakbar.com/public_html/smk
+            ln -sfn /home/u723134020/domains/ahmakbar.com/election-system/public /home/u723134020/domains/ahmakbar.com/public_html/elec
