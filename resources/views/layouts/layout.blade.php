@@ -12,7 +12,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     @else
         <!-- Menggunakan manifest untuk memuat file CSS dan JS yang benar -->
-        <link rel="stylesheet" href="{{ assets('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <script src="{{ asset('js/app.js') }}" defer></script>
     @endif
 
