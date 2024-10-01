@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup SSH
+      - name: Setup SSH and Deploy
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
@@ -22,26 +22,47 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           script: |
             cd /home/u723134020/domains/ahmakbar.com
-            git clone https://github.com/ahmakbardev/election-system.git
-            cd /home/u723134020/domains/ahmakbar.com/election-system
-            git add .
+
+            # Clone repository if not exists
+            if [ ! -d "election-system" ]; then
+              git clone https://github.com/ahmakbardev/election-system.git
+            fi
+
+            cd election-system
             git stash
-            git pull
+            git pull origin develop
+
+            # Setup Composer
             chmod +x ~/bin/composer
             echo "export PATH=$HOME/bin:$PATH" >> ~/.bash_profile
-            echo "export PATH=$HOME/bin/node/bin:$PATH" >> ~/.bash_profile
             source ~/.bash_profile
+
+            # Setup Node.js
+            echo "export PATH=$HOME/bin/nodejs/bin:$PATH" >> ~/.bash_profile
+            source ~/.bash_profile
+
+            # Ensure Node.js and npm are available
             which node
             node -v
             npm -v
-            npm i
-            npm run prod
+
+            # Install Node.js dependencies and build assets
+            npm install
+            npm run build
+
+            # Ensure Composer is available
             which composer
             composer --version
+
+            # Install PHP dependencies via Composer
             composer install
             composer update
+
+            # Run Laravel commands
             php artisan key:generate
             php artisan route:clear
             php artisan config:cache
             php artisan optimize
-            ln -s /home/u723134020/domains/ahmakbar.com/election-system/public/* /home/u723134020/domains/ahmakbar.com/public_html/smk
+
+            # Link public directory to public_html
+            ln -sfn /home/u723134020/domains/ahmakbar.com/election-system/public /home/u723134020/domains/ahmakbar.com/public_html/smk
