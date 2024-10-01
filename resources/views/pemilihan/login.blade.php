@@ -43,7 +43,7 @@
 
         <!-- Panduan Login (langsung muncul) -->
         <div id="panduanModal"
-            class="fixed right-4 top-4 w-full max-w-sm md:max-w-md bg-white shadow-md rounded-lg p-4 z-50">
+            class="fixed right-4 top-4 w-full max-w-sm md:max-w-md bg-white shadow-md rounded-lg p-4 z-50" style="bottom: 0">
             <h3 class="font-bold text-xl">Panduan Login</h3>
             <p class="text-base mt-2">1. Masukkan <b>kode unik</b> Anda yang terdiri dari <b>absen</b>, <b>tingkat</b>, dan
                 <b>kelas</b> yang digabung menjadi satu <br>contoh = <b>01XITKJ2</b>.
