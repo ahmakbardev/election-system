@@ -64,6 +64,7 @@ jobs:
             php artisan route:clear
             php artisan config:cache
             php artisan optimize
+            php artisan storage:link
 
             # Link public directory to public_html
-            ln -sfn /home/u723134020/domains/ahmakbar.com/election-system/public /home/u723134020/domains/ahmakbar.com/public_html/elec
+            ln -sfn /home/u723134020/domains/ahmakbar.com/election-system/public/* /home/u723134020/domains/ahmakbar.com/public_html/elec
