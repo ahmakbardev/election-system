@@ -23,7 +23,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
     <!-- Core Css -->
-    <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/theme.css') }}"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.jqueryui.css"
         integrity="sha512-YydtVInqiFLmalqu/0L19ygXUp4dOTQaw/qjP/h5G8kIbTd9m60aEtZCH+D4oLor1I3C1ZOULeJeBrif+8KEaw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">

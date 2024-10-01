@@ -7,7 +7,7 @@
     a[class*="bg-"] {
         position: relative;
         overflow: hidden;
-        transition: all .1s ease-in-out;
+        transition: all 0.1s ease-in-out;
     }
 
     .ripple-effect {
@@ -25,4 +25,35 @@
             opacity: 0;
         }
     }
+}
+
+.btn {
+    border-radius: 7px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(93 135 255 / var(--tw-bg-opacity));
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.btn-outline-primary {
+    border-radius: 7px;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(93 135 255 / var(--tw-border-opacity));
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(93 135 255 / var(--tw-text-opacity));
 }
