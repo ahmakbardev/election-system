@@ -7,9 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SMK PGRI 2 Malang</title>
     @if (app()->environment('local'))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <script src="{{ asset('js/app.js') }}" defer></script>
     @else
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <!-- Menggunakan manifest untuk memuat file CSS dan JS yang benar -->
+        <link rel="stylesheet" href="{{ assets('css/app.css') }}">
+        <script src="{{ asset('js/app.js') }}" defer></script>
     @endif
 
     <!-- Favicon icon-->

@@ -48,7 +48,8 @@ jobs:
 
             # Install Node.js dependencies and build assets
             npm install
-            npm run build
+            npm install browser-sync browser-sync-webpack-plugin@^2.3.0 --save-dev --legacy-peer-deps
+            npm run dev
 
             # Ensure Composer is available
             which composer
