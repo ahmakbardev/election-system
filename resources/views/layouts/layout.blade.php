@@ -11,9 +11,10 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <script src="{{ asset('js/app.js') }}" defer></script>
     @else
-        <!-- Menggunakan manifest untuk memuat file CSS dan JS yang benar -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <!-- Append version number to CSS file name -->
+        <link rel="stylesheet" href="{{ asset('css/app.css?v=1.05') }}">
+        <!-- Add cache-control headers for CSS and JavaScript files -->
+        <link rel="preload" href="{{ asset('css/app.css?v=1.05') }}" as="style" crossorigin="anonymous"/>
     @endif
 
     <!-- Favicon icon-->
