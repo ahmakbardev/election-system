@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    button[class*="bg-"],
+    a[class*="bg-"] {
+        position: relative;
+        overflow: hidden;
+        transition: all .1s ease-in-out;
+    }
+
+    .ripple-effect {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0);
+        animation: ripple-animation 1.01s linear;
+        pointer-events: none; /* Agar ripple tidak mengganggu interaksi */
+    }
+
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+}
